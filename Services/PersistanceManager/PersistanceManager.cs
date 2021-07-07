@@ -13,9 +13,10 @@ namespace Services
 
         public void WriteToFile(string data, bool append)
         {
+            Console.WriteLine($"{data}");
+
             using (StreamWriter outputFile = CreateStreamWriter(FullFilePath, append))
             {
-                Console.WriteLine($"{data}");
                 outputFile.WriteLine($"{data}");
             }
         }
