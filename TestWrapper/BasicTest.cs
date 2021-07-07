@@ -9,21 +9,22 @@ namespace TestWrapper.Tests
 {
     public class BasicTest : ITest
     {
-        public string FilePath;
-        public string FileName;
-        public HysysSimulator Simulator;
-        public Action<string, string, ISimulator> Test = null;
-
-        public bool OpenSimulator(string version = "")
+        public string FilePath { get; set; }
+        public string FileName {get; set;}
+        public string ProgId { get; set; }
+        public string SimulatorVersion { get; set; }
+        public HysysSimulator Simulator { get; set; }
+        public Action<string, string, ISimulator> Test { get; set; } = null;
+        public bool OpenSimulator()
         {
             Simulator = new HysysSimulator();
-            return Simulator.CreateSimulator(version);
+            return Simulator.CreateSimulator(ProgId, SimulatorVersion);
         }
         public void CloseSimulator()
         {
             Simulator.Dispose();
         }
-        public void RunTest()
+        public void StartTest()
         {
             Test(FilePath, FileName, Simulator);
         }

@@ -16,10 +16,10 @@ namespace TestWrapper.Tests
             SimulationCase simCase = (SimulationCase)hysysSimulator.GetActiveSimulationCase();
             Flowsheet flowsheet = simCase?.Flowsheet;//?.Flowsheets[0] as Flowsheet;
             string flowsheetObject = "Crude_HCAMS";
-            ProcessStream stream = flowsheet.MaterialStreams[flowsheetObject];
+            ProcessStream stream = flowsheet?.MaterialStreams[flowsheetObject];
             List<double> timeList = new List<double>();
 
-            double tempValue = stream.Temperature.Value;
+            double tempValue = stream?.Temperature.Value??0;
             Stopwatch stopWatch = new Stopwatch();
             for (int i = 1; i <= 4; i++)
             {
@@ -41,7 +41,7 @@ namespace TestWrapper.Tests
                 timeList.Add(stopWatch.Elapsed.TotalSeconds);
             }
 
-            string data = string.Join(",", timeList);
+            string data =  string.Join(",", timeList);
             string csvFilePath = Path.Combine(filePath, $"CPUTime_{hysysSimulator.GetSimulatorVersion()}.csv");
             PersistenceManager persistanceManager = new PersistenceManager(csvFilePath);
             persistanceManager.WriteToFile(data, false);

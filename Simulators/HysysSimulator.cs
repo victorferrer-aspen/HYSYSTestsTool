@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace Simulators
 {
-    public class HysysSimulator : ISimulator, IDisposable
+    public partial class HysysSimulator : ISimulator, IDisposable
     {
         private Application hyApp;
         private SimulationCase simCase;
-        public CaseInfo caseInfo;
-        public SimulatorInfo simInfo;
-        private string hysysEngineProgId = "HYSYS.Engine.NewInstance";//"HYSYS.Application.NewInstance";
+        public CaseInfo caseInfo { get; set; }
+        public SimulatorInfo simInfo { get; set; }
         public event EventHandler<SimulatorEventArgs> SimulationCaseIsOpen;
-        public bool CreateSimulator(string version)
+        public bool CreateSimulator(string progId, string version)
         {
             if(string.IsNullOrWhiteSpace(version))
             {
@@ -23,7 +22,7 @@ namespace Simulators
             }
             else
             {
-                Type type = Type.GetTypeFromProgID($"{hysysEngineProgId}.{version}");
+                Type type = Type.GetTypeFromProgID($"{progId}.{version}");
                 dynamic instance = Activator.CreateInstance(type);
                 hyApp = instance;
             }
@@ -73,10 +72,6 @@ namespace Simulators
         {
             simCase.Close();
         }
-        public bool Run()
-        {
-            throw new NotImplementedException();
-        }
 
         public int GetProcessId()
         {
@@ -86,7 +81,7 @@ namespace Simulators
         }
         public string GetSimulatorVersion()
         {
-            return simInfo.ShortVersion;
+            return simInfo.ShortVersion.Replace(HysysStrings.HysysKeyNotFound, "HysysEngine");
         }
         public void Dispose()
         {
@@ -104,7 +99,6 @@ namespace Simulators
 
         public _SimulationCase GetActiveSimulationCase()
         {
-
             return simCase ?? hyApp.ActiveDocument;
         }
         public dynamic GetCaseVariable(string moniker)

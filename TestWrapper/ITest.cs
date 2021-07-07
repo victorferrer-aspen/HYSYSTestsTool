@@ -8,8 +8,8 @@ namespace TestWrapper.Tests
 {
     public interface ITest
     {
-        void RunTest();
-        bool OpenSimulator(string version);
+        void StartTest();
+        bool OpenSimulator();
         void CloseSimulator();
     }
 }

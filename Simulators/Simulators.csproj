@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaseInfo.cs" />
+    <Compile Include="HysysStrings.cs" />
     <Compile Include="ISimulator.cs" />
     <Compile Include="SimulatorInfo.cs" />
     <Compile Include="HysysSimulator.cs" />
