@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspentech.HYSYS.Interop, Version=36.0.0.0, Culture=neutral, PublicKeyToken=0c6f6275fa173512, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspentech.HYSYS.Interop.dll.36.0.0.1\lib\Aspentech.HYSYS.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,13 +57,13 @@
     <Compile Include="Tests\SaveCaseRepeatedly.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{F871A812-ED55-4A06-97CA-B2CB72801677}</Project>
       <Name>Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
