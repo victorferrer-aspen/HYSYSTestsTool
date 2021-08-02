@@ -85,7 +85,7 @@ namespace Simulators
         }
         public void Dispose()
         {
-            simCase.Close();
+            ((_SimulationCase)simCase).Close();
             simCase = null;
             hyApp.Quit();
             hyApp = null;

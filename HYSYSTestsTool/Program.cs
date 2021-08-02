@@ -1,10 +1,7 @@
 ﻿using Simulators;
+using Simulators.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestWrapper.Tests;
 
 namespace HYSYSTestsTool
@@ -18,13 +15,13 @@ namespace HYSYSTestsTool
             ITest test = new BasicTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = args[0],
+                FileName = Path.Combine(Environment.CurrentDirectory, "Heat Train V11.hsc"),
                 ProgId = HysysStrings.HysysEngineProgId,
-                SimulatorVersion = args[1],
-                Test = ChangeSingleInput.TestDefinition
+                SimulatorVersion = "V14.0",
+                Test = FlowsheetObjectStatus.TestDefinition
             };
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             test.OpenSimulator();
             test.StartTest();

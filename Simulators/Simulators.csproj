@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspentech.HYSYS.Interop, Version=36.0.0.0, Culture=neutral, PublicKeyToken=0c6f6275fa173512, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspentech.HYSYS.Interop.dll.36.0.0.1\lib\Aspentech.HYSYS.Interop.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +48,7 @@
     <Compile Include="HysysSimulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\ChangeSingleInput.cs" />
+    <Compile Include="Tests\FlowsheetObjectStatus.cs" />
     <Compile Include="Tests\OpenCloseCaseRepeatedly.cs" />
     <Compile Include="Tests\SaveCaseRepeatedly.cs" />
   </ItemGroup>

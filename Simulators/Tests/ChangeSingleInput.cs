@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace TestWrapper.Tests
+namespace Simulators.Tests
 {
     public class ChangeSingleInput
     {
