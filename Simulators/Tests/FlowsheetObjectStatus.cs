@@ -14,6 +14,8 @@ namespace Simulators.Tests
             hysysSimulator.OpenCase(new CaseInfo(filePath, fileName));
             SimulationCase simCase = (SimulationCase)hysysSimulator.GetActiveSimulationCase();
 
+            dynamic safety = hysysSimulator.GetCaseVariable("Document.0/PSVSizingManager.300:Boolean.501");
+
             dynamic result = hysysSimulator.GetCaseVariable(":MulticaseCheckConvergenceForObjectTypes.0");
 
             dynamic status = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Status.1");

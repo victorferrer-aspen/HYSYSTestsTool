@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Simulators
 {
-    public interface ISimulator
+    public interface ISimulator: IDisposable
     {
         bool CreateSimulator(string progId, string version);
         void CloseSimulator();

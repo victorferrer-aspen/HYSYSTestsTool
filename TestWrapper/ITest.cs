@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simulators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace TestWrapper.Tests
         void StartTest();
         bool OpenSimulator();
         void CloseSimulator();
+        ISimulator GetSimulator();
     }
 }

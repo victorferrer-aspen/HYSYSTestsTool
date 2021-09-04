@@ -54,6 +54,7 @@
     <Compile Include="Tests\ChangeSingleInput.cs" />
     <Compile Include="Tests\FlowsheetObjectStatus.cs" />
     <Compile Include="Tests\OpenCloseCaseRepeatedly.cs" />
+    <Compile Include="Tests\RunParallelFcc.cs" />
     <Compile Include="Tests\SaveCaseRepeatedly.cs" />
   </ItemGroup>
   <ItemGroup>

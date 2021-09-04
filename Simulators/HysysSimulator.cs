@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Simulators
 {
-    public partial class HysysSimulator : ISimulator, IDisposable
+    public partial class HysysSimulator : ISimulator
     {
         private Application hyApp;
         private SimulationCase simCase;
@@ -85,7 +85,7 @@ namespace Simulators
         }
         public void Dispose()
         {
-            ((_SimulationCase)simCase).Close();
+            ((_SimulationCase)simCase)?.Close();
             simCase = null;
             hyApp.Quit();
             hyApp = null;
