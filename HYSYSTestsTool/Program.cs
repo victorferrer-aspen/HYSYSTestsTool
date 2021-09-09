@@ -9,16 +9,14 @@ namespace HYSYSTestsTool
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Press Enter to start");
-
+        { 
             ITest test = new ParallelTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "Heat Train V11.hsc"),
+                FileName = Path.Combine(Environment.CurrentDirectory, "FCC_GulfCoast_ROM_V5.hsc"),
                 ProgId = HysysStrings.HysysEngineProgId,
-                SimulatorVersion = "V14.0",
-                NumberOfSimulators = 7,
+                SimulatorVersion = "V12.1",
+                NumberOfSimulators = 30,
                 Test = RunParallelFcc.TestDefinition
             };
 
