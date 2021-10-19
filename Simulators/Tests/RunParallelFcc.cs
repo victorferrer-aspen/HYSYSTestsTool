@@ -14,9 +14,9 @@ namespace Simulators.Tests
         static string RegenCatCoolerDuty = "Document.0/FlowSht.1/UnitOpObject.400(FCC)/FCCReactorSection.700/Regenerator.600.0:HeatFlow.3500.8";
         public static void TestDefinition(string filePath, string fileName, BlockingCollection<ISimulator> hysysSimulators)
         {
-            var parallelOptions = new ParallelOptions() { MaxDegreeOfParallelism = 2 };
+            var parallelOptions = new ParallelOptions() { MaxDegreeOfParallelism = hysysSimulators.Count };
             ConcurrentBag<string> tempFiles = new ConcurrentBag<string>();
-            Parallel.ForEach(hysysSimulators, simulator =>
+            Parallel.ForEach(hysysSimulators, parallelOptions, simulator =>
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
                 string newFileName = $"{fileNameWithoutExtension}_{Guid.NewGuid()}.hsc";

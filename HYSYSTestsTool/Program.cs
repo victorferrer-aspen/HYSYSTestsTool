@@ -16,12 +16,20 @@ namespace HYSYSTestsTool
             {
                 FilePath = Directory.GetCurrentDirectory(),
                 FileName = Path.Combine(Environment.CurrentDirectory, "Heat Train V11.hsc"),
-                ProgId = HysysStrings.HysysEngineProgId,
+                ProgId = HysysStrings.HysysUIProgId,
                 SimulatorVersion = "V14.0",
                 NumberOfSimulators = 7,
                 Test = RunParallelFcc.TestDefinition
             };
 
+            //ITest test = new BasicTest
+            //{
+            //    FilePath = Directory.GetCurrentDirectory(),
+            //    FileName = Path.Combine(Environment.CurrentDirectory, "AdjustRecycle.hsc"),
+            //    ProgId = HysysStrings.HysysUIProgId,
+            //    SimulatorVersion = "V14.0",
+            //    Test = FlowsheetObjectStatus.TestDefinition
+            //};
             //Console.ReadKey();
 
             test.OpenSimulator();

@@ -18,13 +18,14 @@ namespace Simulators.Tests
 
             dynamic result = hysysSimulator.GetCaseVariable(":MulticaseCheckConvergenceForObjectTypes.0");
 
-            dynamic status = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Status.1");
+            dynamic adjustStatus = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Status.1");
+            dynamic recycleStatus = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(RCY-1):Status.1");
 
             dynamic adjuststatus1 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Attribute.501");
             
             dynamic adjuststatus2 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Attribute.500.1");
             dynamic result1 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(RCY-1):Boolean.500.1");
-            //dynamic result2 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(RCY-1):Attribute.500.1");
+            dynamic result2 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(RCY-1):Attribute.500.1");
 
             //double valueSttatus1 = result1.Value;
             //double valueSttatus2 = result2.Value;
