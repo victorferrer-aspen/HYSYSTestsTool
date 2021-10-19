@@ -9,9 +9,7 @@ namespace HYSYSTestsTool
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Press Enter to start");
-
+        { 
             ITest test = new ParallelTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
