@@ -9,26 +9,26 @@ namespace HYSYSTestsTool
     class Program
     {
         static void Main(string[] args)
-        { 
-            ITest test = new ParallelTest
-            {
-                FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "Heat Train V11.hsc"),
-                ProgId = HysysStrings.HysysUIProgId,
-                SimulatorVersion = "V14.0",
-                NumberOfSimulators = 7,
-                Test = RunParallelFcc.TestDefinition
-            };
-
-            //ITest test = new BasicTest
+        {
+            //ITest test = new ParallelTest
             //{
             //    FilePath = Directory.GetCurrentDirectory(),
-            //    FileName = Path.Combine(Environment.CurrentDirectory, "AdjustRecycle.hsc"),
+            //    FileName = Path.Combine(Environment.CurrentDirectory, "Heat Train V11.hsc"),
             //    ProgId = HysysStrings.HysysUIProgId,
             //    SimulatorVersion = "V14.0",
-            //    Test = FlowsheetObjectStatus.TestDefinition
+            //    NumberOfSimulators = 7,
+            //    Test = RunParallelFcc.TestDefinition
             //};
-            //Console.ReadKey();
+
+            ITest test = new BasicTest
+            {
+                FilePath = Directory.GetCurrentDirectory(),
+                FileName = Path.Combine(Environment.CurrentDirectory, "BlankCase.hsc"),
+                ProgId = HysysStrings.HysysUIProgId,
+                SimulatorVersion = "V14.0",
+                Test = MeasureTimeToOpenCase.TestDefinition
+            };
+            Console.ReadKey();
 
             test.OpenSimulator();
             //Console.ReadKey();
