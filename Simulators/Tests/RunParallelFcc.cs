@@ -28,7 +28,8 @@ namespace Simulators.Tests
                 Console.WriteLine("Press enter to change inputs");
                 Console.ReadKey();
                 Console.WriteLine("Starting changing inputs");
-
+            try
+            { 
                 Parallel.ForEach(hysysSimulators, simulator =>
                 {
                     SimulationCase simCase = (SimulationCase)simulator.GetActiveSimulationCase();

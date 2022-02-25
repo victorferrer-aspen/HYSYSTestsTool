@@ -23,12 +23,12 @@ namespace HYSYSTestsTool
             ITest test = new BasicTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "BlankCase.hsc"),
+                FileName = Path.Combine(Environment.CurrentDirectory, "CQ00716195-HHV diesel V11.hsc"),
                 ProgId = HysysStrings.HysysUIProgId,
                 SimulatorVersion = "V14.0",
-                Test = MeasureTimeToOpenCase.TestDefinition
+                Test = ComponentProperties.TestDefinition
             };
-            Console.ReadKey();
+            //Console.ReadKey();
 
             test.OpenSimulator();
             //Console.ReadKey();
