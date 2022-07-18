@@ -23,10 +23,10 @@ namespace HYSYSTestsTool
             ITest test = new BasicTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "CQ00716195-HHV diesel V11.hsc"),
+                FileName = Path.Combine(Environment.CurrentDirectory, "HIERARCHYdemo.hsc"),
                 ProgId = HysysStrings.HysysUIProgId,
                 SimulatorVersion = "V14.0",
-                Test = ComponentProperties.TestDefinition
+                Test = FlowsheetObjectStatus.TestDefinition
             };
             //Console.ReadKey();
 

@@ -16,6 +16,7 @@ namespace Simulators
         void SaveCase();
         int GetProcessId();
         dynamic GetCaseVariable(string moniker);
+        dynamic GetCaseVariables(string[] monikers);
         _SimulationCase GetActiveSimulationCase();
         string GetSimulatorVersion();
     }

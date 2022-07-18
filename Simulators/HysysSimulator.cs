@@ -106,6 +106,11 @@ namespace Simulators
             BackDoor bd = (BackDoor)simCase;
             return bd?.get_BackDoorVariable(moniker).Variable ?? null;
         }
+        public dynamic GetCaseVariables(string[] monikers)
+        {
+            BackDoor bd = (BackDoor)simCase;
+            return bd?.get_BackDoorVariables(monikers) ?? null;
+        }
     }
 
     public class SimulatorEventArgs : EventArgs

@@ -17,10 +17,28 @@ namespace Simulators.Tests
             dynamic safety = hysysSimulator.GetCaseVariable("Document.0/PSVSizingManager.300:Boolean.501");
 
             dynamic result = hysysSimulator.GetCaseVariable(":MulticaseCheckConvergenceForObjectTypes.0");
+            string heaterStatusString = "Document.0/FlowSht.1/UnitOpObject.400(FLOW-1)/FlowSht.600/UnitOpObject.400(FLOW-11)/FlowSht.600/UnitOpObject.400(E-100):Status.1";
+            //string adjustStatusString = "Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Status.1";
+            string recycleStatusString = "Document.0/FlowSht.1/UnitOpObject.400(RCY-1):Status.1";
 
-            dynamic adjustStatus = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Status.1");
-            dynamic recycleStatus = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(RCY-1):Status.1");
+            dynamic adjustStatus = hysysSimulator.GetCaseVariable(heaterStatusString);
+            dynamic recycleStatus = hysysSimulator.GetCaseVariable(recycleStatusString);
 
+            ICollection<string> statusList = new List<string>();
+            //statusList.Add(adjustStatusString);
+            statusList.Add(heaterStatusString);
+
+            dynamic statusResults = hysysSimulator.GetCaseVariables(statusList.ToArray());
+            if(statusResults.Length > 0)
+            {
+                foreach (var statusResult in statusResults)
+                {
+                    Type type = statusResult.GetType();
+                    string statusText = statusResult.Variable.Value;
+                }
+            }
+
+            var recycleStatusValue = recycleStatus.Value;
             dynamic adjuststatus1 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Attribute.501");
             
             dynamic adjuststatus2 = hysysSimulator.GetCaseVariable("Document.0/FlowSht.1/UnitOpObject.400(ADJ-1):Attribute.500.1");
