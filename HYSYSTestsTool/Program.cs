@@ -20,13 +20,14 @@ namespace HYSYSTestsTool
             //    Test = RunParallelFcc.TestDefinition
             //};
 
+
             ITest test = new BasicTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "CQ00716195-HHV diesel V11.hsc"),
+                FileName = Path.Combine(Environment.CurrentDirectory, "Modified for 2 and 3 banks-29june2022.hsc"),
                 ProgId = HysysStrings.HysysUIProgId,
                 SimulatorVersion = "V14.0",
-                Test = ComponentProperties.TestDefinition
+                Test = ChangeInputList.TestDefinition
             };
             //Console.ReadKey();
 
