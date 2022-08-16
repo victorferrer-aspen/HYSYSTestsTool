@@ -54,6 +54,7 @@
     <Compile Include="Tests\ChangeInputList.cs" />
     <Compile Include="Tests\ChangeSingleInput.cs" />
     <Compile Include="Tests\ComponentProperties.cs" />
+    <Compile Include="Tests\FHComponentProperties.cs" />
     <Compile Include="Tests\FlowsheetObjectStatus.cs" />
     <Compile Include="Tests\GasPlantParallel.cs" />
     <Compile Include="Tests\MeasureTimeToOpenCase.cs" />
