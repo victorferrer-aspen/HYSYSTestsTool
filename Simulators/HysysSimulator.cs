@@ -34,6 +34,7 @@ namespace Simulators
             else
             {
                 hyApp.Visible = true;
+                hyApp.DoEvents();
                 return true;
             }
 

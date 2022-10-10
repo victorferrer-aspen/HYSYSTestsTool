@@ -24,10 +24,10 @@ namespace HYSYSTestsTool
             ITest test = new BasicTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "Modified for 2 and 3 banks-29june2022.hsc"),
+                FileName = Path.Combine(Environment.CurrentDirectory, "Acid Gas Cleaning Using MDEA.hsc"),
                 ProgId = HysysStrings.HysysUIProgId,
                 SimulatorVersion = "V14.0",
-                Test = ChangeInputList.TestDefinition
+                Test = SimSrviceChangeInput.TestDefinition
             };
             //Console.ReadKey();
 
