@@ -24,7 +24,7 @@ namespace HYSYSTestsTool
             ITest test = new BasicTest
             {
                 FilePath = Directory.GetCurrentDirectory(),
-                FileName = Path.Combine(Environment.CurrentDirectory, "Acid Gas Cleaning Using MDEA.hsc"),
+                FileName = Path.Combine(Environment.CurrentDirectory, "Samref FCC Model 24Noc2021 data Rev14.hsc"),
                 ProgId = HysysStrings.HysysUIProgId,
                 SimulatorVersion = "V14.0",
                 Test = SimSrviceChangeInput.TestDefinition
